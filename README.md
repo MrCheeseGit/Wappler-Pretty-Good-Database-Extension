@@ -133,14 +133,12 @@ More flow ideas: `examples/README.md` in this repo.
 
 ## Installation
 
-Pick **one** install path and follow it completely:
+| Path | |
+|------|--|
+| **npm** | Wappler Project Settings → Extensions (`wappler-pretty-good-database`) |
+| **Git** | [Extension Installer](https://www.mrcheese.co.uk/extensions/install) or manual copy below |
 
-| Path | Best for |
-|------|----------|
-| **Git** (recommended) | Most reliable; uses `git clone` + copy from the repo |
-| **npm** | You already use Wappler Project Settings → Extensions |
-
-Both paths copy files into `extensions/`, `lib/modules/`, and `public/`. The npm path also requires verifying `node_modules/wappler-pretty-good-database` exists **before** you run any copy commands.
+Git manual copy installs into `extensions/`, `lib/modules/`, and `public/`.
 
 ### Git install — Extension Installer (recommended)
 
