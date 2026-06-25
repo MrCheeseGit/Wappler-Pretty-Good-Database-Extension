@@ -1,279 +1,339 @@
 {
-  components: [
+  "components": [
     {
-      type: 'dmx-pgd-encrypt-field'
-      selector: 'dmx-pgd-encrypt-field, [is=dmx-pgd-encrypt-field]'
-      framework: 'bootstrap5'
-      groupTitle: 'Mr Cheese'
-      groupIcon: 'fas fa-lg fa-cheese comp-exec'
-      title: 'PGD Encrypt Field: @@id@@'
-      icon: 'fas fa-lg fa-lock comp-data'
-      state: 'opened'
-      anyParent: true
-      template: '<dmx-pgd-encrypt-field id="@@id@@" field-name="secret_pgp_@@id@@" public-key-url="/api/pgd/publicKey" input-label="Secret value" design-label="PGD encrypt field"><input type="hidden" name="secret_pgp_@@id@@" id="secret_pgp_@@id@@_armored" class="pgd-armored-field" value=""></dmx-pgd-encrypt-field>'
-      baseName: 'pgdEncryptField'
-      help: 'Mode Secure (Phase 2): user types plaintext; browser encrypts to armored ciphertext in a hidden input for form POST. The hidden input stays in the page HTML for Server Connect Import From Form. Pair with PGD Is Armored on the API. Set public-key-url to an API that returns PGD_PUBLIC_KEY (PGD Public Key step). Private key never goes to the server.'
-
-      properties: [
+      "type": "dmx-pgd-encrypt-field",
+      "selector": "dmx-pgd-encrypt-field, [is=dmx-pgd-encrypt-field]",
+      "framework": "bootstrap5",
+      "groupTitle": "Mr Cheese",
+      "groupIcon": "fas fa-lg fa-cheese comp-exec",
+      "title": "PGD Encrypt Field: @@id@@",
+      "icon": "fas fa-lg fa-lock comp-data",
+      "state": "opened",
+      "anyParent": true,
+      "template": "<dmx-pgd-encrypt-field id=\"@@id@@\" field-name=\"secret_pgp_@@id@@\" public-key-url=\"/api/pgd/publicKey\" input-label=\"Secret value\" design-label=\"PGD encrypt field\"><input type=\"hidden\" name=\"secret_pgp_@@id@@\" id=\"secret_pgp_@@id@@_armored\" class=\"pgd-armored-field\" value=\"\"></dmx-pgd-encrypt-field>",
+      "baseName": "pgdEncryptField",
+      "help": "Mode Secure (Phase 2): user types plaintext; browser encrypts to armored ciphertext in a hidden input for form POST. The hidden input stays in the page HTML for Server Connect Import From Form. Pair with PGD Is Armored on the API. Set public-key-url to an API that returns PGD_PUBLIC_KEY (PGD Public Key step). Private key never goes to the server.",
+      "properties": [
         {
-          group: 'PGD Encrypt Field'
-          variables: [
+          "group": "PGD Encrypt Field",
+          "variables": [
             {
-              name: 'compId'
-              optionName: 'id'
-              attribute: 'id'
-              title: 'ID'
-              type: 'text'
-              required: true
-              defaultValue: ''
-            }
+              "name": "compId",
+              "optionName": "id",
+              "attribute": "id",
+              "title": "ID",
+              "type": "text",
+              "required": true,
+              "defaultValue": ""
+            },
             {
-              name: 'fieldName'
-              optionName: 'fieldName'
-              attribute: 'field-name'
-              title: 'Ciphertext field name'
-              type: 'text'
-              defaultValue: 'secret_pgp_@@id@@'
-              help: 'POST name for armored ciphertext. Must match the static hidden input in the component (for Import From Form) and your Database Insert column binding.'
-            }
+              "name": "fieldName",
+              "optionName": "fieldName",
+              "attribute": "field-name",
+              "title": "Ciphertext field name",
+              "type": "text",
+              "defaultValue": "secret_pgp_@@id@@",
+              "help": "POST name for armored ciphertext. Must match the static hidden input in the component (for Import From Form) and your Database Insert column binding."
+            },
             {
-              name: 'publicKeyUrl'
-              optionName: 'publicKeyUrl'
-              attribute: 'public-key-url'
-              title: 'Public key API URL'
-              type: 'text'
-              defaultValue: '/api/pgd/publicKey'
-              help: 'GET endpoint returning {{pgdPublicKey.publicKey}}. Or set Public key (static) instead.'
-            }
+              "name": "publicKeyUrl",
+              "optionName": "publicKeyUrl",
+              "attribute": "public-key-url",
+              "title": "Public key API URL",
+              "type": "text",
+              "defaultValue": "/api/pgd/publicKey",
+              "help": "GET endpoint returning {{pgdPublicKey.publicKey}}. Or set Public key (static) instead."
+            },
             {
-              name: 'publicKey'
-              optionName: 'publicKey'
-              attribute: 'public-key'
-              title: 'Public key (static)'
-              type: 'textarea'
-              dataBindings: true
-              defaultValue: ''
-              help: 'Optional armored public key. Overrides public-key-url when set.'
-            }
+              "name": "publicKey",
+              "optionName": "publicKey",
+              "attribute": "public-key",
+              "title": "Public key (static)",
+              "type": "textarea",
+              "dataBindings": true,
+              "defaultValue": "",
+              "help": "Optional armored public key. Overrides public-key-url when set."
+            },
             {
-              name: 'inputLabel'
-              optionName: 'inputLabel'
-              attribute: 'input-label'
-              title: 'Input label'
-              type: 'text'
-              defaultValue: 'Secret value'
-            }
+              "name": "inputLabel",
+              "optionName": "inputLabel",
+              "attribute": "input-label",
+              "title": "Input label",
+              "type": "text",
+              "defaultValue": "Secret value"
+            },
             {
-              name: 'placeholder'
-              optionName: 'placeholder'
-              attribute: 'placeholder'
-              title: 'Placeholder'
-              type: 'text'
-              defaultValue: ''
-            }
+              "name": "placeholder",
+              "optionName": "placeholder",
+              "attribute": "placeholder",
+              "title": "Placeholder",
+              "type": "text",
+              "defaultValue": ""
+            },
             {
-              name: 'inputType'
-              optionName: 'inputType'
-              attribute: 'input-type'
-              title: 'Input type'
-              type: 'droplist'
-              defaultValue: 'password'
-              values: [
-                {title: 'Password', value: 'password'}
-                {title: 'Text', value: 'text'}
+              "name": "inputType",
+              "optionName": "inputType",
+              "attribute": "input-type",
+              "title": "Input type",
+              "type": "droplist",
+              "defaultValue": "password",
+              "values": [
+                {
+                  "title": "Password",
+                  "value": "password"
+                },
+                {
+                  "title": "Text",
+                  "value": "text"
+                }
               ]
-            }
+            },
             {
-              name: 'encryptOnBlur'
-              optionName: 'encryptOnBlur'
-              attribute: 'encrypt-on-blur'
-              title: 'Encrypt on blur'
-              type: 'boolean'
-              defaultValue: true
-            }
+              "name": "encryptOnBlur",
+              "optionName": "encryptOnBlur",
+              "attribute": "encrypt-on-blur",
+              "title": "Encrypt on blur",
+              "type": "boolean",
+              "defaultValue": true
+            },
             {
-              name: 'designLabel'
-              optionName: 'designLabel'
-              attribute: 'design-label'
-              title: 'Design label'
-              type: 'text'
-              defaultValue: 'PGD encrypt field'
+              "name": "designLabel",
+              "optionName": "designLabel",
+              "attribute": "design-label",
+              "title": "Design label",
+              "type": "text",
+              "defaultValue": "PGD encrypt field"
             }
           ]
         }
-      ]
-
-      children: []
-      allowed_children: {}
-
-      copyFiles: [
-        {src: 'includes/dmx-pgd-shared.js', dst: 'js/dmx-pgd-shared.js'}
-        {src: 'includes/dmx-pgd-encrypt-field.js', dst: 'js/dmx-pgd-encrypt-field.js'}
-        {src: 'includes/dmx-pgd.css', dst: 'css/dmx-pgd.css'}
-        {src: 'includes/dmx-pgd-openpgp.bundle.js', dst: 'js/dmx-pgd-openpgp.bundle.js'}
-      ]
-
-      linkFiles: [
-        {src: 'css/dmx-pgd.css', type: 'css'}
-        {src: 'js/dmx-pgd-shared.js', type: 'js', defer: true}
-        {src: 'js/dmx-pgd-encrypt-field.js', type: 'js', defer: true}
-      ]
-
-      cssOrder: ['dmx-pgd.css']
-      jsOrder: ['dmx-pgd-shared.js', 'dmx-pgd-encrypt-field.js']
-    }
-    {
-      type: 'dmx-pgd-decrypt-view'
-      selector: 'dmx-pgd-decrypt-view, [is=dmx-pgd-decrypt-view]'
-      framework: 'bootstrap5'
-      groupTitle: 'Mr Cheese'
-      groupIcon: 'fas fa-lg fa-cheese comp-exec'
-      title: 'PGD Decrypt View: @@id@@'
-      icon: 'fas fa-lg fa-unlock comp-data'
-      state: 'opened'
-      anyParent: true
-      template: '<dmx-pgd-decrypt-view id="@@id@@" dmx-bind:ciphertext="" mask-until-unlock="true" remember-session="false" design-label="PGD decrypt view"><div class="pgd-decrypt-wrap"><div class="pgd-decrypt-masked">Locked</div><div class="pgd-decrypt-plaintext" hidden></div><button type="button" class="pgd-unlock-btn btn btn-outline-secondary btn-sm">Unlock</button></div></dmx-pgd-decrypt-view>'
-      baseName: 'pgdDecryptView'
-      help: 'Mode Secure: bind armored ciphertext from your API. User unlocks with private key + passphrase in the browser. Server never decrypts this field.'
-
-      properties: [
+      ],
+      "children": [],
+      "allowed_children": {},
+      "copyFiles": [
         {
-          group: 'PGD Decrypt View'
-          variables: [
+          "src": "includes/dmx-pgd-shared.js",
+          "dst": "js/dmx-pgd-shared.js"
+        },
+        {
+          "src": "includes/dmx-pgd-encrypt-field.js",
+          "dst": "js/dmx-pgd-encrypt-field.js"
+        },
+        {
+          "src": "includes/dmx-pgd.css",
+          "dst": "css/dmx-pgd.css"
+        },
+        {
+          "src": "includes/dmx-pgd-openpgp.bundle.js",
+          "dst": "js/dmx-pgd-openpgp.bundle.js"
+        }
+      ],
+      "linkFiles": [
+        {
+          "src": "css/dmx-pgd.css",
+          "type": "css"
+        },
+        {
+          "src": "js/dmx-pgd-shared.js",
+          "type": "js",
+          "defer": true
+        },
+        {
+          "src": "js/dmx-pgd-encrypt-field.js",
+          "type": "js",
+          "defer": true
+        }
+      ],
+      "cssOrder": [
+        "dmx-pgd.css"
+      ],
+      "jsOrder": [
+        "dmx-pgd-shared.js",
+        "dmx-pgd-encrypt-field.js"
+      ]
+    },
+    {
+      "type": "dmx-pgd-decrypt-view",
+      "selector": "dmx-pgd-decrypt-view, [is=dmx-pgd-decrypt-view]",
+      "framework": "bootstrap5",
+      "groupTitle": "Mr Cheese",
+      "groupIcon": "fas fa-lg fa-cheese comp-exec",
+      "title": "PGD Decrypt View: @@id@@",
+      "icon": "fas fa-lg fa-unlock comp-data",
+      "state": "opened",
+      "anyParent": true,
+      "template": "<dmx-pgd-decrypt-view id=\"@@id@@\" dmx-bind:ciphertext=\"\" mask-until-unlock=\"true\" remember-session=\"false\" design-label=\"PGD decrypt view\"><div class=\"pgd-decrypt-wrap\"><div class=\"pgd-decrypt-masked\">Locked</div><div class=\"pgd-decrypt-plaintext\" hidden></div><button type=\"button\" class=\"pgd-unlock-btn btn btn-outline-secondary btn-sm\">Unlock</button></div></dmx-pgd-decrypt-view>",
+      "baseName": "pgdDecryptView",
+      "help": "Mode Secure: bind armored ciphertext from your API. User unlocks with private key + passphrase in the browser. Server never decrypts this field.",
+      "properties": [
+        {
+          "group": "PGD Decrypt View",
+          "variables": [
             {
-              name: 'compId'
-              optionName: 'id'
-              attribute: 'id'
-              title: 'ID'
-              type: 'text'
-              required: true
-              defaultValue: ''
-            }
+              "name": "compId",
+              "optionName": "id",
+              "attribute": "id",
+              "title": "ID",
+              "type": "text",
+              "required": true,
+              "defaultValue": ""
+            },
             {
-              name: 'ciphertext'
-              optionName: 'ciphertext'
-              attribute: 'ciphertext'
-              title: 'Armored ciphertext'
-              type: 'textarea'
-              dataBindings: true
-              defaultValue: ''
-              help: 'Bind query field, e.g. {{pgdRows.secret_pgp}}'
-            }
+              "name": "ciphertext",
+              "optionName": "ciphertext",
+              "attribute": "ciphertext",
+              "title": "Armored ciphertext",
+              "type": "textarea",
+              "dataBindings": true,
+              "defaultValue": "",
+              "help": "Bind query field, e.g. {{pgdRows.secret_pgp}}"
+            },
             {
-              name: 'maskUntilUnlock'
-              optionName: 'maskUntilUnlock'
-              attribute: 'mask-until-unlock'
-              title: 'Mask until unlock'
-              type: 'boolean'
-              defaultValue: true
-            }
+              "name": "maskUntilUnlock",
+              "optionName": "maskUntilUnlock",
+              "attribute": "mask-until-unlock",
+              "title": "Mask until unlock",
+              "type": "boolean",
+              "defaultValue": true
+            },
             {
-              name: 'rememberSession'
-              optionName: 'rememberSession'
-              attribute: 'remember-session'
-              title: 'Remember unlock (session)'
-              type: 'boolean'
-              defaultValue: false
-              help: 'Opt-in: store key in sessionStorage for this tab only. Default off. Use Lock to clear.'
-            }
+              "name": "rememberSession",
+              "optionName": "rememberSession",
+              "attribute": "remember-session",
+              "title": "Remember unlock (session)",
+              "type": "boolean",
+              "defaultValue": false,
+              "help": "Opt-in: store key in sessionStorage for this tab only. Default off. Use Lock to clear."
+            },
             {
-              name: 'showLockButton'
-              optionName: 'showLockButton'
-              attribute: 'show-lock-button'
-              title: 'Show lock button'
-              type: 'boolean'
-              defaultValue: true
-              help: 'When unlocked, show Lock to hide plaintext and clear remembered key for this tab.'
-            }
+              "name": "showLockButton",
+              "optionName": "showLockButton",
+              "attribute": "show-lock-button",
+              "title": "Show lock button",
+              "type": "boolean",
+              "defaultValue": true,
+              "help": "When unlocked, show Lock to hide plaintext and clear remembered key for this tab."
+            },
             {
-              name: 'unlockLabel'
-              optionName: 'unlockLabel'
-              attribute: 'unlock-label'
-              title: 'Unlock button label'
-              type: 'text'
-              defaultValue: 'Unlock to view'
-            }
+              "name": "unlockLabel",
+              "optionName": "unlockLabel",
+              "attribute": "unlock-label",
+              "title": "Unlock button label",
+              "type": "text",
+              "defaultValue": "Unlock to view"
+            },
             {
-              name: 'lockLabel'
-              optionName: 'lockLabel'
-              attribute: 'lock-label'
-              title: 'Lock button label'
-              type: 'text'
-              defaultValue: 'Lock'
-            }
+              "name": "lockLabel",
+              "optionName": "lockLabel",
+              "attribute": "lock-label",
+              "title": "Lock button label",
+              "type": "text",
+              "defaultValue": "Lock"
+            },
             {
-              name: 'maskedLabel'
-              optionName: 'maskedLabel'
-              attribute: 'masked-label'
-              title: 'Masked label'
-              type: 'text'
-              defaultValue: 'Locked'
-            }
+              "name": "maskedLabel",
+              "optionName": "maskedLabel",
+              "attribute": "masked-label",
+              "title": "Masked label",
+              "type": "text",
+              "defaultValue": "Locked"
+            },
             {
-              name: 'designLabel'
-              optionName: 'designLabel'
-              attribute: 'design-label'
-              title: 'Design label'
-              type: 'text'
-              defaultValue: 'PGD decrypt view'
+              "name": "designLabel",
+              "optionName": "designLabel",
+              "attribute": "design-label",
+              "title": "Design label",
+              "type": "text",
+              "defaultValue": "PGD decrypt view"
             }
           ]
         }
+      ],
+      "children": [],
+      "allowed_children": {},
+      "copyFiles": [
+        {
+          "src": "includes/dmx-pgd-shared.js",
+          "dst": "js/dmx-pgd-shared.js"
+        },
+        {
+          "src": "includes/dmx-pgd-decrypt-view.js",
+          "dst": "js/dmx-pgd-decrypt-view.js"
+        },
+        {
+          "src": "includes/dmx-pgd.css",
+          "dst": "css/dmx-pgd.css"
+        },
+        {
+          "src": "includes/dmx-pgd-openpgp.bundle.js",
+          "dst": "js/dmx-pgd-openpgp.bundle.js"
+        }
+      ],
+      "linkFiles": [
+        {
+          "src": "css/dmx-pgd.css",
+          "type": "css"
+        },
+        {
+          "src": "js/dmx-pgd-shared.js",
+          "type": "js",
+          "defer": true
+        },
+        {
+          "src": "js/dmx-pgd-decrypt-view.js",
+          "type": "js",
+          "defer": true
+        }
+      ],
+      "cssOrder": [
+        "dmx-pgd.css"
+      ],
+      "jsOrder": [
+        "dmx-pgd-shared.js",
+        "dmx-pgd-decrypt-view.js"
       ]
-
-      children: []
-      allowed_children: {}
-
-      copyFiles: [
-        {src: 'includes/dmx-pgd-shared.js', dst: 'js/dmx-pgd-shared.js'}
-        {src: 'includes/dmx-pgd-decrypt-view.js', dst: 'js/dmx-pgd-decrypt-view.js'}
-        {src: 'includes/dmx-pgd.css', dst: 'css/dmx-pgd.css'}
-        {src: 'includes/dmx-pgd-openpgp.bundle.js', dst: 'js/dmx-pgd-openpgp.bundle.js'}
-      ]
-
-      linkFiles: [
-        {src: 'css/dmx-pgd.css', type: 'css'}
-        {src: 'js/dmx-pgd-shared.js', type: 'js', defer: true}
-        {src: 'js/dmx-pgd-decrypt-view.js', type: 'js', defer: true}
-      ]
-
-      cssOrder: ['dmx-pgd.css']
-      jsOrder: ['dmx-pgd-shared.js', 'dmx-pgd-decrypt-view.js']
     }
-  ]
-
-  attributes: []
-
-  events: [
+  ],
+  "attributes": [],
+  "events": [
     {
-      name: 'dmx-pgd-encrypt-field-encrypted'
-      attribute: 'encrypted'
-      title: 'Encrypted'
-      allowedOn: {'dmx-pgd-encrypt-field': true}
-    }
+      "name": "dmx-pgd-encrypt-field-encrypted",
+      "attribute": "encrypted",
+      "title": "Encrypted",
+      "allowedOn": {
+        "dmx-pgd-encrypt-field": true
+      }
+    },
     {
-      name: 'dmx-pgd-encrypt-field-error'
-      attribute: 'error'
-      title: 'Encrypt error'
-      allowedOn: {'dmx-pgd-encrypt-field': true}
-    }
+      "name": "dmx-pgd-encrypt-field-error",
+      "attribute": "error",
+      "title": "Encrypt error",
+      "allowedOn": {
+        "dmx-pgd-encrypt-field": true
+      }
+    },
     {
-      name: 'dmx-pgd-decrypt-view-unlocked'
-      attribute: 'unlocked'
-      title: 'Unlocked'
-      allowedOn: {'dmx-pgd-decrypt-view': true}
-    }
+      "name": "dmx-pgd-decrypt-view-unlocked",
+      "attribute": "unlocked",
+      "title": "Unlocked",
+      "allowedOn": {
+        "dmx-pgd-decrypt-view": true
+      }
+    },
     {
-      name: 'dmx-pgd-decrypt-view-locked'
-      attribute: 'locked'
-      title: 'Locked'
-      allowedOn: {'dmx-pgd-decrypt-view': true}
-    }
+      "name": "dmx-pgd-decrypt-view-locked",
+      "attribute": "locked",
+      "title": "Locked",
+      "allowedOn": {
+        "dmx-pgd-decrypt-view": true
+      }
+    },
     {
-      name: 'dmx-pgd-decrypt-view-error'
-      attribute: 'error'
-      title: 'Decrypt error'
-      allowedOn: {'dmx-pgd-decrypt-view': true}
+      "name": "dmx-pgd-decrypt-view-error",
+      "attribute": "error",
+      "title": "Decrypt error",
+      "allowedOn": {
+        "dmx-pgd-decrypt-view": true
+      }
     }
   ]
 }

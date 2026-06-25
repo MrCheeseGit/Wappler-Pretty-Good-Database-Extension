@@ -14,35 +14,35 @@
     ],
     "copy": [
       {
-        "src": "pgd.js",
+        "src": "server_connect/modules/pgd.js",
         "dest": "lib/modules/pgd.js"
       },
       {
-        "src": "pgd.js",
+        "src": "server_connect/modules/pgd.js",
         "dest": "extensions/server_connect/modules/pgd.js"
       },
       {
-        "src": "pgd_encrypt.hjson",
+        "src": "server_connect/modules/pgd_encrypt.hjson",
         "dest": "extensions/server_connect/modules/pgd_encrypt.hjson"
       },
       {
-        "src": "pgd_decrypt.hjson",
+        "src": "server_connect/modules/pgd_decrypt.hjson",
         "dest": "extensions/server_connect/modules/pgd_decrypt.hjson"
       },
       {
-        "src": "pgd_decrypt_fields.hjson",
+        "src": "server_connect/modules/pgd_decrypt_fields.hjson",
         "dest": "extensions/server_connect/modules/pgd_decrypt_fields.hjson"
       },
       {
-        "src": "pgd_is_armored.hjson",
+        "src": "server_connect/modules/pgd_is_armored.hjson",
         "dest": "extensions/server_connect/modules/pgd_is_armored.hjson"
       },
       {
-        "src": "pgd_fingerprint.hjson",
+        "src": "server_connect/modules/pgd_fingerprint.hjson",
         "dest": "extensions/server_connect/modules/pgd_fingerprint.hjson"
       },
       {
-        "src": "pgd_public_key.hjson",
+        "src": "server_connect/modules/pgd_public_key.hjson",
         "dest": "extensions/server_connect/modules/pgd_public_key.hjson"
       }
     ],
@@ -65,23 +65,23 @@
         "dest": "extensions/app_connect/components/pgd_components.hjson"
       },
       {
-        "src": "app_connect/includes/dmx-pgd-shared.js",
+        "src": "includes/dmx-pgd-shared.js",
         "dest": "public/js/dmx-pgd-shared.js"
       },
       {
-        "src": "app_connect/includes/dmx-pgd-encrypt-field.js",
+        "src": "includes/dmx-pgd-encrypt-field.js",
         "dest": "public/js/dmx-pgd-encrypt-field.js"
       },
       {
-        "src": "app_connect/includes/dmx-pgd-decrypt-view.js",
+        "src": "includes/dmx-pgd-decrypt-view.js",
         "dest": "public/js/dmx-pgd-decrypt-view.js"
       },
       {
-        "src": "app_connect/includes/dmx-pgd.css",
+        "src": "includes/dmx-pgd.css",
         "dest": "public/css/dmx-pgd.css"
       },
       {
-        "src": "app_connect/includes/dmx-pgd-openpgp.bundle.js",
+        "src": "includes/dmx-pgd-openpgp.bundle.js",
         "dest": "public/js/dmx-pgd-openpgp.bundle.js"
       }
     ],

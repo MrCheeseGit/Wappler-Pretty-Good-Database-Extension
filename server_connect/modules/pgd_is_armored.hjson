@@ -1,0 +1,59 @@
+{
+  "type": "pgd_is_armored",
+  "module": "pgd",
+  "action": "isArmored",
+  "groupTitle": "Mr Cheese",
+  "groupIcon": "fas fa-lg fa-cheese comp-exec",
+  "title": "PGD Is Armored",
+  "icon": "fas fa-lg fa-check-circle comp-flows",
+  "outputType": "object",
+  "serverModel": [
+    "node"
+  ],
+  "help": "Validate that a value looks like armored OpenPGP ciphertext before database insert (Mode Secure). Chain a Condition on {{stepName.valid}} before Insert. Does not decrypt.",
+  "dataScheme": [
+    {
+      "name": "valid",
+      "type": "boolean"
+    },
+    {
+      "name": "error",
+      "type": "text"
+    }
+  ],
+  "dataPickObject": true,
+  "properties": [
+    {
+      "group": "Pretty Good Database",
+      "variables": [
+        {
+          "name": "actionName",
+          "optionName": "name",
+          "title": "Name",
+          "type": "text",
+          "required": true,
+          "defaultValue": "",
+          "baseName": "pgdCheck",
+          "help": "Step name (e.g. {{pgdCheck.valid}})"
+        },
+        {
+          "name": "actionOutput",
+          "optionName": "output",
+          "title": "Output",
+          "type": "boolean",
+          "initValue": true,
+          "defaultValue": false
+        },
+        {
+          "name": "value",
+          "optionName": "value",
+          "title": "Value to check",
+          "type": "text",
+          "serverDataBindings": true,
+          "defaultValue": "",
+          "help": "Bind POST field from dmx-pgd-encrypt-field, e.g. {{$_POST.account_number_pgp}}"
+        }
+      ]
+    }
+  ]
+}

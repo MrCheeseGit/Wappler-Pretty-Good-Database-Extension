@@ -1,0 +1,121 @@
+{
+  "type": "pgd_decrypt_fields",
+  "module": "pgd",
+  "action": "decryptFields",
+  "groupTitle": "Mr Cheese",
+  "groupIcon": "fas fa-lg fa-cheese comp-exec",
+  "title": "PGD Decrypt Fields",
+  "icon": "fas fa-lg fa-table comp-data",
+  "outputType": "array",
+  "serverModel": [
+    "node"
+  ],
+  "dataPick": true,
+  "dataPickObject": true,
+  "help": "After a database query step, decrypt selected armored columns on each row (Mode Simple). Bind sourceData to {{yourQuery}}. Use the grid to pick encrypted columns. Bind repeat on the page to this step name, not the raw query. Run the API once with Output on so Wappler refreshes step meta.",
+  "properties": [
+    {
+      "group": "Pretty Good Database",
+      "variables": [
+        {
+          "name": "actionName",
+          "optionName": "name",
+          "title": "Name",
+          "type": "text",
+          "required": true,
+          "defaultValue": "",
+          "baseName": "pgdRows",
+          "help": "Step name for repeats (e.g. {{pgdRows}})"
+        },
+        {
+          "name": "actionOutput",
+          "optionName": "output",
+          "title": "Output",
+          "type": "boolean",
+          "initValue": true,
+          "defaultValue": false
+        },
+        {
+          "name": "sourceData",
+          "optionName": "sourceData",
+          "title": "Query results",
+          "type": "text",
+          "required": true,
+          "serverDataBindings": true,
+          "defaultValue": "",
+          "help": "Bind the database query step above, e.g. {{accountsQuery}}"
+        },
+        {
+          "name": "decryptFields",
+          "optionName": "decryptFields",
+          "title": "Fields to decrypt",
+          "type": "grid",
+          "defaultValue": {},
+          "help": "Pick encrypted columns from the query. Output name is optional; leave blank to strip _pgp suffix (account_number_pgp → account_number).",
+          "columns": [
+            {
+              "field": "field",
+              "caption": "Encrypted column",
+              "size": "55%",
+              "editable": {
+                "type": "datapicker"
+              }
+            },
+            {
+              "field": "outputAs",
+              "caption": "Output as",
+              "size": "45%",
+              "editable": {
+                "type": "text"
+              }
+            }
+          ]
+        },
+        {
+          "name": "privateKey",
+          "optionName": "privateKey",
+          "title": "Private key (armored)",
+          "type": "text",
+          "serverDataBindings": true,
+          "defaultValue": "",
+          "help": "Bind {{$_ENV.PGD_PRIVATE_KEY}}"
+        },
+        {
+          "name": "passphrase",
+          "optionName": "passphrase",
+          "title": "Key passphrase",
+          "type": "text",
+          "serverDataBindings": true,
+          "defaultValue": "",
+          "help": "Optional. Bind {{$_ENV.PGD_PASSPHRASE}}"
+        },
+        {
+          "name": "onError",
+          "optionName": "onError",
+          "title": "When decrypt fails",
+          "type": "droplist",
+          "defaultValue": "skip",
+          "values": [
+            {
+              "title": "Keep armored text",
+              "value": "skip"
+            },
+            {
+              "title": "Clear field",
+              "value": "clear"
+            },
+            {
+              "title": "Stop API (throw)",
+              "value": "fail"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "usedModules": {
+    "node": {
+      "openpgp": "^6.1.0"
+    }
+  }
+}

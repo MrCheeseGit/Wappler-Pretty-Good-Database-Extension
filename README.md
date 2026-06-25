@@ -170,8 +170,8 @@ Run from your **Wappler project root** (folder with `package.json`). Skip `git c
 ```bash
 git clone https://github.com/MrCheeseGit/Wappler-Pretty-Good-Database-Extension.git ../Wappler-Pretty-Good-Database-Extension
 
-cp ../Wappler-Pretty-Good-Database-Extension/pgd.js lib/modules/pgd.js
-cp ../Wappler-Pretty-Good-Database-Extension/pgd.js extensions/server_connect/modules/pgd.js
+cp ../Wappler-Pretty-Good-Database-Extension/server_connect/modules/pgd.js lib/modules/pgd.js
+cp ../Wappler-Pretty-Good-Database-Extension/server_connect/modules/pgd.js extensions/server_connect/modules/pgd.js
 cp ../Wappler-Pretty-Good-Database-Extension/pgd_*.hjson extensions/server_connect/modules/
 ```
 
@@ -179,9 +179,9 @@ cp ../Wappler-Pretty-Good-Database-Extension/pgd_*.hjson extensions/server_conne
 
 ```bash
 cp ../Wappler-Pretty-Good-Database-Extension/app_connect/components.hjson extensions/app_connect/components/pgd_components.hjson
-cp ../Wappler-Pretty-Good-Database-Extension/app_connect/includes/dmx-pgd-*.js public/js/
-cp ../Wappler-Pretty-Good-Database-Extension/app_connect/includes/dmx-pgd-openpgp.bundle.js public/js/
-cp ../Wappler-Pretty-Good-Database-Extension/app_connect/includes/dmx-pgd.css public/css/
+cp ../Wappler-Pretty-Good-Database-Extension/includes/dmx-pgd-*.js public/js/
+cp ../Wappler-Pretty-Good-Database-Extension/includes/dmx-pgd-openpgp.bundle.js public/js/
+cp ../Wappler-Pretty-Good-Database-Extension/includes/dmx-pgd.css public/css/
 ```
 
 Or add script/link tags on your layout (see component `linkFiles` in `components.hjson`).

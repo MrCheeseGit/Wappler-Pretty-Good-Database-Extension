@@ -4,7 +4,7 @@ import { fileURLToPath } from 'url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.join(__dirname, '..');
-const outFile = path.join(root, 'app_connect/includes/dmx-pgd-openpgp.bundle.js');
+const outFile = path.join(root, 'includes/dmx-pgd-openpgp.bundle.js');
 
 await esbuild.build({
     entryPoints: [path.join(__dirname, 'pgd-openpgp-bundle-entry.js')],

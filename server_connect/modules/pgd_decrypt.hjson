@@ -1,0 +1,82 @@
+{
+  "type": "pgd_decrypt",
+  "module": "pgd",
+  "action": "decrypt",
+  "groupTitle": "Mr Cheese",
+  "groupIcon": "fas fa-lg fa-cheese comp-exec",
+  "title": "PGD Decrypt",
+  "icon": "fas fa-lg fa-unlock comp-flows",
+  "outputType": "object",
+  "serverModel": [
+    "node"
+  ],
+  "help": "Decrypt one armored OpenPGP message to plaintext (Mode Simple). Bind privateKey from {{$_ENV.PGD_PRIVATE_KEY}} and optional {{$_ENV.PGD_PASSPHRASE}}. For regulated data, prefer Mode Secure: return ciphertext from the query and decrypt in dmx-pgd-decrypt-view on the page.",
+  "dataScheme": [
+    {
+      "name": "plaintext",
+      "type": "text"
+    },
+    {
+      "name": "error",
+      "type": "text"
+    }
+  ],
+  "dataPickObject": true,
+  "properties": [
+    {
+      "group": "Pretty Good Database",
+      "variables": [
+        {
+          "name": "actionName",
+          "optionName": "name",
+          "title": "Name",
+          "type": "text",
+          "required": true,
+          "defaultValue": "",
+          "baseName": "pgdDecrypt",
+          "help": "Step name (e.g. {{pgdDecrypt.plaintext}})"
+        },
+        {
+          "name": "actionOutput",
+          "optionName": "output",
+          "title": "Output",
+          "type": "boolean",
+          "initValue": true,
+          "defaultValue": false
+        },
+        {
+          "name": "ciphertext",
+          "optionName": "ciphertext",
+          "title": "Armored ciphertext",
+          "type": "text",
+          "serverDataBindings": true,
+          "defaultValue": "",
+          "help": "Bind a column or POST field containing -----BEGIN PGP MESSAGE-----"
+        },
+        {
+          "name": "privateKey",
+          "optionName": "privateKey",
+          "title": "Private key (armored)",
+          "type": "text",
+          "serverDataBindings": true,
+          "defaultValue": "",
+          "help": "Bind {{$_ENV.PGD_PRIVATE_KEY}} (Mode Simple only)"
+        },
+        {
+          "name": "passphrase",
+          "optionName": "passphrase",
+          "title": "Key passphrase",
+          "type": "text",
+          "serverDataBindings": true,
+          "defaultValue": "",
+          "help": "Optional. Bind {{$_ENV.PGD_PASSPHRASE}} if your secret key is passphrase-protected"
+        }
+      ]
+    }
+  ],
+  "usedModules": {
+    "node": {
+      "openpgp": "^6.1.0"
+    }
+  }
+}

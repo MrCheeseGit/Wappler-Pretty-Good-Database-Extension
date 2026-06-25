@@ -1,0 +1,77 @@
+{
+  "type": "pgd_encrypt",
+  "module": "pgd",
+  "action": "encrypt",
+  "groupTitle": "Mr Cheese",
+  "groupIcon": "fas fa-lg fa-cheese comp-exec",
+  "title": "PGD Encrypt",
+  "icon": "fas fa-lg fa-lock comp-flows",
+  "outputType": "object",
+  "serverModel": [
+    "node"
+  ],
+  "help": "Encrypt plaintext to armored OpenPGP ciphertext (Mode Simple). Bind publicKey from {{$_ENV.PGD_PUBLIC_KEY}}. Insert {{stepName.ciphertext}} into your database column. For Mode Secure (E2E), encrypt in the browser with dmx-pgd-encrypt-field instead.",
+  "dataScheme": [
+    {
+      "name": "ciphertext",
+      "type": "text"
+    },
+    {
+      "name": "fingerprint",
+      "type": "text"
+    },
+    {
+      "name": "error",
+      "type": "text"
+    }
+  ],
+  "dataPickObject": true,
+  "properties": [
+    {
+      "group": "Pretty Good Database",
+      "variables": [
+        {
+          "name": "actionName",
+          "optionName": "name",
+          "title": "Name",
+          "type": "text",
+          "required": true,
+          "defaultValue": "",
+          "baseName": "pgdEncrypt",
+          "help": "Step name (e.g. {{pgdEncrypt.ciphertext}})"
+        },
+        {
+          "name": "actionOutput",
+          "optionName": "output",
+          "title": "Output",
+          "type": "boolean",
+          "initValue": true,
+          "defaultValue": false
+        },
+        {
+          "name": "plaintext",
+          "optionName": "plaintext",
+          "title": "Plaintext",
+          "type": "text",
+          "serverDataBindings": true,
+          "defaultValue": "",
+          "help": "Value to encrypt, e.g. {{$_POST.account_number}}"
+        },
+        {
+          "name": "publicKey",
+          "optionName": "publicKey",
+          "title": "Public key (armored)",
+          "type": "text",
+          "serverDataBindings": true,
+          "defaultValue": "",
+          "help": "Bind {{$_ENV.PGD_PUBLIC_KEY}} from Wappler Environment"
+        }
+      ]
+    }
+  ],
+  "usedModules": {
+    "node": {
+      "openpgp": "^6.1.0"
+    }
+  }
+}
