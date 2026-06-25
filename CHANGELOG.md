@@ -1,6 +1,6 @@
 # Changelog
 
-## 0.2.3
+## 0.2.4
 
 Current release of **Pretty Good Database**. See [README](README.md) for features, installation, and usage.
 
