@@ -1,6 +1,6 @@
 {
   "name": "wappler-pretty-good-database",
-  "version": "0.2.5",
+  "version": "0.2.6",
   "description": "Wappler OpenPGP armored field encryption for Server Connect and App Connect (Pretty Good Database)",
   "main": "server_connect/modules/pgd.js",
   "homepage": "https://www.mrcheese.co.uk",
@@ -27,7 +27,7 @@
   },
   "wappler": {
     "module": "pgd",
-    "version": "0.2.5"
+    "version": "0.2.6"
   },
   "dependencies": {
     "openpgp": "^6.1.0"

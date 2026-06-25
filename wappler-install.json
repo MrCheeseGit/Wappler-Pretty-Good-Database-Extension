@@ -88,7 +88,7 @@
     "notes": [
       "PGD Encrypt Field inside forms; PGD Decrypt View on pages that show ciphertext.",
       "Add a PGD Public Key API for public-key-url on the encrypt field.",
-      "After a version bump: npm install wappler-pretty-good-database, npm install assistant copy script, Project Updater, then quit Wappler completely and reopen (IDE reads components.hjson from node_modules).",
+      "After a version bump: npm install, Project Updater, then quit Wappler completely and reopen.",
       "Local file: dev \u2014 if npm install does not refresh, rm -rf node_modules/wappler-pretty-good-database then npm install again."
     ]
   }

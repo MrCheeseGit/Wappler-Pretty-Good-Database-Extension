@@ -1,20 +1,5 @@
 # Pretty Good Database (PGD)
 
-> ## ⚠️ NPM users — please read first (important)
->
-> Mr Cheese extensions were built for **Git copy install** first. Wappler's **npm** lane (Project Settings → Extensions) puts the package in `node_modules` but **does not automatically copy** Server Connect modules, App Connect JS/CSS, or other files into your project folders. **Project Updater alone is not enough.**
->
-> **If you use npm, follow the full [npm install](#npm-install-wappler-project-settings) section below.** Quick summary:
->
-> 1. Add this extension in **Wappler → Project Settings → Extensions**, then run **`npm install`** in your project root.
-> 2. **Verify** the package landed: `ls node_modules/wappler-pretty-good-database/package.json` (if this fails, fix registration before copying anything).
-> 3. Run the copy script from the **[Mr Cheese npm install assistant](https://www.mrcheese.co.uk/extensions/install/npm)** — choose **Both** — into `extensions/`, `lib/modules/`, and `public/`.
-> 4. Run **Project Updater → Update** after copying.
-> 5. **Quit Wappler completely** (including the tray icon) and reopen your project.
->
-> Mr Cheese is working on a combined solution and has proposed **[`wappler-install.json`](https://github.com/MrCheeseGit/Wappler-Git-Extension-Manifest-Standard)** so install tools (and hopefully Wappler itself) can deploy extensions the same way from Git or npm. Until then, sorry for the extra steps — this is one reason these extensions were never intended to rely on npm alone.
->
-> **Prefer Git?** Use the [Git Extension Installer](https://www.mrcheese.co.uk/extensions/install) — the most complete path, no npm required.
 
 Wappler extension for **armored OpenPGP** field encryption. Store sensitive values (account numbers, notes, credentials) as `-----BEGIN PGP MESSAGE-----` text in your database.
 
@@ -190,21 +175,20 @@ Wappler runs `npm install openpgp` on the first API that uses PGD steps. **Quit 
 
 ### npm install (Wappler Project Settings)
 
-Use this when you register the extension through **Wappler → Project Settings → Extensions**. The npm package registers PGD in Wappler but **does not copy runtime files** into your project folders.
+1. **Wappler** → Project Settings → Extensions → Add → `wappler-pretty-good-database`
+2. From your project root: `npm install`
+3. Run **Project Updater → Update** when prompted.
+4. **Quit Wappler completely** and reopen your project.
 
-1. **Register in Wappler** — Project Settings → Extensions → Add → enter `wappler-pretty-good-database` or this repository's GitHub URL.
-2. **Install dependencies** — from your Wappler project root:
-   ```bash
-   npm install
-   ```
-3. **Verify before copying** (required):
-   ```bash
-   ls node_modules/wappler-pretty-good-database/package.json
-   ```
-   If this command fails, stop here. Fix registration or `npm install` before copying anything.
-4. **Copy files** — open the **[npm install assistant](https://www.mrcheese.co.uk/extensions/install/npm)**, select **Pretty Good Database**, choose **Both**, copy the generated script, and run it from your project root.
-5. Run **Project Updater → Update** after the copy script.
-6. **Quit Wappler completely** (tray icon too) and reopen your project.
+#### Local `file:` development (optional)
+
+```json
+"devDependencies": {
+  "wappler-pretty-good-database": "file:../path/to/this-extension"
+}
+```
+
+After you change extension source, run `npm install` again, then Project Updater if needed, and restart Wappler.
 
 ### Updating
 
@@ -213,7 +197,7 @@ When a new PGD version is released (check [CHANGELOG](CHANGELOG.md) on GitHub), 
 | Step | Why |
 |------|-----|
 | `npm install wappler-pretty-good-database` (or `npm update`) in the project root | Wappler reads `components.hjson` from **`node_modules`**, not from `extensions/app_connect/` alone |
-| Run the **[npm install assistant](https://www.mrcheese.co.uk/extensions/install/npm)** copy script (or Git manual copy per `wappler-install.json`) | Refreshes `public/js`, `public/css`, and Server Connect modules for the live site |
+| Run Git manual copy per `wappler-install.json` | Refreshes `public/js`, `public/css`, and Server Connect modules for the live site |
 | **Project Updater → Update** | Syncs App Connect assets after the copy script |
 | **Quit Wappler completely** (tray icon too) and reopen the project | Reloads the component picker and property panel |
 
