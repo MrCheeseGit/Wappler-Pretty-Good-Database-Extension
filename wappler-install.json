@@ -1,0 +1,95 @@
+{
+  "schema": 1,
+  "id": "pretty-good-database",
+  "name": "Pretty Good Database",
+  "version": "0.2.3",
+  "cloneDir": "Wappler-Pretty-Good-Database-Extension",
+  "hasServerConnect": true,
+  "hasAppConnect": true,
+  "readme": "https://github.com/MrCheeseGit/Wappler-Pretty-Good-Database-Extension#installation",
+  "serverConnect": {
+    "directories": [
+      "extensions/server_connect/modules",
+      "lib/modules"
+    ],
+    "copy": [
+      {
+        "src": "pgd.js",
+        "dest": "lib/modules/pgd.js"
+      },
+      {
+        "src": "pgd.js",
+        "dest": "extensions/server_connect/modules/pgd.js"
+      },
+      {
+        "src": "pgd_encrypt.hjson",
+        "dest": "extensions/server_connect/modules/pgd_encrypt.hjson"
+      },
+      {
+        "src": "pgd_decrypt.hjson",
+        "dest": "extensions/server_connect/modules/pgd_decrypt.hjson"
+      },
+      {
+        "src": "pgd_decrypt_fields.hjson",
+        "dest": "extensions/server_connect/modules/pgd_decrypt_fields.hjson"
+      },
+      {
+        "src": "pgd_is_armored.hjson",
+        "dest": "extensions/server_connect/modules/pgd_is_armored.hjson"
+      },
+      {
+        "src": "pgd_fingerprint.hjson",
+        "dest": "extensions/server_connect/modules/pgd_fingerprint.hjson"
+      },
+      {
+        "src": "pgd_public_key.hjson",
+        "dest": "extensions/server_connect/modules/pgd_public_key.hjson"
+      }
+    ],
+    "notes": [
+      "Copy pgd.js to both lib/modules/ and extensions/server_connect/modules/.",
+      "Wappler installs openpgp via usedModules on first API run.",
+      "Set PGD_PUBLIC_KEY in Wappler Environment. Mode Secure: no PGD_PRIVATE_KEY on server.",
+      "Quit Wappler completely and restart."
+    ]
+  },
+  "appConnect": {
+    "directories": [
+      "extensions/app_connect/components",
+      "public/js",
+      "public/css"
+    ],
+    "copy": [
+      {
+        "src": "app_connect/components.hjson",
+        "dest": "extensions/app_connect/components/pgd_components.hjson"
+      },
+      {
+        "src": "app_connect/includes/dmx-pgd-shared.js",
+        "dest": "public/js/dmx-pgd-shared.js"
+      },
+      {
+        "src": "app_connect/includes/dmx-pgd-encrypt-field.js",
+        "dest": "public/js/dmx-pgd-encrypt-field.js"
+      },
+      {
+        "src": "app_connect/includes/dmx-pgd-decrypt-view.js",
+        "dest": "public/js/dmx-pgd-decrypt-view.js"
+      },
+      {
+        "src": "app_connect/includes/dmx-pgd.css",
+        "dest": "public/css/dmx-pgd.css"
+      },
+      {
+        "src": "app_connect/includes/dmx-pgd-openpgp.bundle.js",
+        "dest": "public/js/dmx-pgd-openpgp.bundle.js"
+      }
+    ],
+    "notes": [
+      "PGD Encrypt Field inside forms; PGD Decrypt View on pages that show ciphertext.",
+      "Add a PGD Public Key API for public-key-url on the encrypt field.",
+      "After a version bump: npm install wappler-pretty-good-database, npm install assistant copy script, Project Updater, then quit Wappler completely and reopen (IDE reads components.hjson from node_modules).",
+      "Local file: dev \u2014 if npm install does not refresh, rm -rf node_modules/wappler-pretty-good-database then npm install again."
+    ]
+  }
+}

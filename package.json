@@ -1,0 +1,38 @@
+{
+  "name": "wappler-pretty-good-database",
+  "version": "0.2.3",
+  "description": "Wappler OpenPGP armored field encryption for Server Connect and App Connect (Pretty Good Database)",
+  "main": "pgd.js",
+  "homepage": "https://www.mrcheese.co.uk",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MrCheeseGit/Wappler-Pretty-Good-Database-Extension.git"
+  },
+  "keywords": [
+    "wappler",
+    "wappler-extension",
+    "server-connect",
+    "app-connect",
+    "pgp",
+    "openpgp",
+    "encryption",
+    "security",
+    "mrcheese"
+  ],
+  "author": "Mr Cheese",
+  "license": "SEE LICENSE IN LICENSE",
+  "scripts": {
+    "build:openpgp": "node scripts/build-pgd-openpgp-bundle.mjs",
+    "test:pgd": "node scripts/test-pgd.mjs"
+  },
+  "wappler": {
+    "module": "pgd",
+    "version": "0.2.3"
+  },
+  "dependencies": {
+    "openpgp": "^6.1.0"
+  },
+  "devDependencies": {
+    "esbuild": "^0.25.0"
+  }
+}

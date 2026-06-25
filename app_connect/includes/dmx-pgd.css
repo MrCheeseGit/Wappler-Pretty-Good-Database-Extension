@@ -1,0 +1,104 @@
+.pgd-design-placeholder {
+    border: 1px dashed var(--bs-border-color, #ccc);
+    border-radius: 0.375rem;
+    padding: 0.75rem 1rem;
+    background: var(--bs-light, #f8f9fa);
+    color: var(--bs-secondary-color, #6c757d);
+    font-size: 0.875rem;
+}
+
+.pgd-design-hint {
+    font-size: 0.8125rem;
+    opacity: 0.85;
+}
+
+.pgd-encrypt-label {
+    display: block;
+    margin-bottom: 0.35rem;
+    font-weight: 500;
+}
+
+.pgd-decrypt-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem 0.75rem;
+}
+
+.pgd-decrypt-root {
+    width: 100%;
+}
+
+.pgd-unlock-panel {
+    margin-top: 0.75rem;
+    padding: 0.75rem;
+    border: 1px solid var(--bs-border-color, #dee2e6);
+    border-radius: 0.375rem;
+    background: var(--bs-light, #f8f9fa);
+}
+
+.pgd-decrypt-masked {
+    font-family: var(--bs-font-monospace, monospace);
+    letter-spacing: 0.08em;
+    color: var(--bs-secondary-color, #6c757d);
+}
+
+.pgd-decrypt-plaintext {
+    word-break: break-word;
+}
+
+.pgd-unlock-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 20000;
+    background: rgba(0, 0, 0, 0.45);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.pgd-unlock-modal {
+    background: var(--bs-body-bg, #fff);
+    color: var(--bs-body-color, #212529);
+    border-radius: 0.5rem;
+    max-width: 32rem;
+    width: 100%;
+    padding: 1.25rem;
+    box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.2);
+}
+
+.pgd-unlock-title {
+    font-size: 1.1rem;
+    margin: 0 0 0.5rem;
+}
+
+.pgd-unlock-help {
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
+    color: var(--bs-secondary-color, #6c757d);
+}
+
+.pgd-unlock-label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 500;
+    margin: 0.5rem 0 0.25rem;
+}
+
+.pgd-unlock-actions {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    align-items: center;
+}
+
+.pgd-unlock-required {
+    font-weight: 400;
+    color: var(--bs-secondary-color, #6c757d);
+    font-size: 0.8125rem;
+}
+
+    margin: 0.75rem 0 0;
+    font-size: 0.875rem;
+}

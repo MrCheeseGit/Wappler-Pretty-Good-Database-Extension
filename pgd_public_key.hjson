@@ -1,0 +1,55 @@
+{
+  type: 'pgd_public_key'
+  module: 'pgd'
+  action: 'publicKey'
+  groupTitle: 'Mr Cheese'
+  groupIcon: 'fas fa-lg fa-cheese comp-exec'
+  title: 'PGD Public Key'
+  icon: 'fas fa-lg fa-key comp-flows'
+  outputType: 'object'
+  serverModel: ['node']
+
+  help: 'Return the armored PGD public key for browser encrypt components. Bind publicKey from {{$_ENV.PGD_PUBLIC_KEY}}. Safe to expose to logged-in pages; never expose the private key.'
+
+  dataScheme: [
+    {name: 'publicKey', type: 'text'}
+    {name: 'error', type: 'text'}
+  ]
+
+  dataPickObject: true
+
+  properties: [
+    {
+      group: 'Pretty Good Database'
+      variables: [
+        {
+          name: 'actionName'
+          optionName: 'name'
+          title: 'Name'
+          type: 'text'
+          required: true
+          defaultValue: ''
+          baseName: 'pgdPublicKey'
+          help: 'Step name (e.g. {{pgdPublicKey.publicKey}})'
+        }
+        {
+          name: 'actionOutput'
+          optionName: 'output'
+          title: 'Output'
+          type: 'boolean'
+          initValue: true
+          defaultValue: false
+        }
+        {
+          name: 'publicKey'
+          optionName: 'publicKey'
+          title: 'Public key (armored)'
+          type: 'text'
+          serverDataBindings: true
+          defaultValue: ''
+          help: 'Bind {{$_ENV.PGD_PUBLIC_KEY}}'
+        }
+      ]
+    }
+  ]
+}

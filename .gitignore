@@ -1,0 +1,10 @@
+.DS_Store
+Thumbs.db
+*.log
+node_modules/
+.npmrc
+*-plan.md
+plan.md
+examples/test-private-key.asc
+scripts/test-private-key.asc
+scripts/local-test-keys.json
